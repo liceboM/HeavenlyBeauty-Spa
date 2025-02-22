@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heavenly Beauty Spa</title>
+    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <style>
+      .Big-container{
+        justify-content: center;
+        display: flex;
+        flex-direction: row;
+        gap: 80px ;
+        margin-bottom: -700px;
+        padding-top: -800px;
+ 
+      }
+      .secondBig-container{
+        justify-content: center;
+        display: flex;
+        flex-direction: row;
+        gap: 80px ;
+      }
+    </style>
+</head>
+
+<body>
+  <!-- NAVIGATION BAR SECTION -->
+  <nav class="NavBar">
+    <div class="Content">
+        <div class="Logo"><a href="#">Heavenly Beauty Spa</a></div>
+            <ul class="Menu-List">
+             <div class="icon Cancel-Btn">
+                 <i class="fas fa-times"></i>
+             </div>
+              <li><a href="index.html">HOME</a></li>
+              <li><a href="about.html">ABOUT US</a></li>
+              <li class="DropDown">
+                <a href="treatments.html">TREATMENTS &#9662;</a>
+                <ul class="DropDown-Content">
+                  <li><a href="#">Laser Hair Removal</a></li>
+                  <li><a href="#">Massage Therapy</a></li>
+                  <li><a href="#">Waxing</a></li>
+                  <li><a href="#">Nail Bar</a></li>
+                  <li><a href="#">Spray Tan</a></li>
+                  <li><a href="#">Facial</a></li>
+                </ul>
+              </li>
+              <li><a href="contact.html">CONTACT US</a></li>
+              <li><a href="appointment.html">BOOK APPOINTMENT</a></li>
+            </ul>
+            <div class="icon Menu-Btn">
+             <i class="fas fa-bars"></i>
+         </div>
+    </div>
+</nav>
+
+<!-- CONTAINER SECTION -->
+<div class="Big-container">
+   <div class="container" >
+    <img src="images/waxes.jpg" alt="about" style="width:100%">
+    <button class="btn">WAXING</button>
+   </div>
+
+   <div class="container">
+     <img src="images/hand-foot-treatments.jpg" alt="about" style="width:100%">
+     <button class="btn">NAIL BAR</button>
+   </div>
+
+   <div class="container">
+     <img src="images/spray-tan-1.jpg" alt="about" style="width:100%">
+     <button class="btn">SPRAY TAN</button>
+   </div>
+</div>
+
+<div class="secondBig-container">
+   <div class="container">
+     <img src="images/spa-facial.jpg" alt="about" style="width:100%">
+     <button class="btn">FACIALS</button>
+   </div>
+
+    <div class="container">
+      <img src="images/k-laser-hair-removal.jpg" alt="about" style="width:100%">
+      <button class="btn">HAIR REMOVALS</button>
+    </div>
+
+    <div class="container">
+      <img src="images/swedish-massage-2.jpg" alt="about" style="width:100%">
+      <button class="btn">MASSAGE THERAPY</button>
+    </div>
+</div>
+
+  <!-- FOOTER SECTION -->
+  <footer>
+    <table id="footerSections">
+        <tr>
+            <td>Heavenly Beauty Spa &copy; 2023</td>
+        </tr>
+    </table>
+</footer>
+
+ <!-- 4 JAVASCRIPT FUNCTIONS -->
+ <script>
+     //1. TO ACTIVATE AND DEACTIVE THE MENU AND CANCEL BUTTON
+    document.addEventListener("DOMContentLoaded", () => {
+    const body = document.querySelector("body");
+    const NavBar = document.querySelector(".NavBar");
+    const Menu = document.querySelector(".Menu-List");
+    const MenuBtn = document.querySelector(".Menu-Btn");
+    const CancelBtn = document.querySelector(".Cancel-Btn");
+    MenuBtn.onclick = ()=>{
+        Menu.classList.add("active");
+        MenuBtn.classList.add("hide");
+        body.classList.add("disabledScroll");
+    }
+
+    CancelBtn.onclick = ()=>{
+        Menu.classList.remove("active");
+        MenuBtn.classList.remove("hide");
+        body.classList.remove("disabledScroll");
+    }
+});
+ </script>
+</body>
+</html>

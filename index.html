@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heavenly Beauty Spa</title>
+    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- NAVIGATION BAR SECTION -->
+   <nav class="navbar">
+       <div class="content">
+           <div class="logo"><a href="#">Heavenly Beauty Spa</a></div>
+               <ul class="menu-list">
+                <div class="icon cancel-btn">
+                    <i class="fas fa-times"></i>
+                </div>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT US</a></li>
+                <li class="dropdown">
+                  <a href="treatments.html">TREATMENTS &#9662;</a>
+                  <ul class="dropdown-content">
+                    <li><a href="#">Laser Hair Removal</a></li>
+                    <li><a href="#">Massage Therapy</a></li>
+                    <li><a href="#">Waxing</a></li>
+                    <li><a href="#">Nail Bar</a></li>
+                    <li><a href="#">Spray Tan</a></li>
+                    <li><a href="#">Facial</a></li>
+                  </ul>
+                </li>
+                <li><a href="contact.html">CONTACT US</a></li>
+                <li><a href="appointment.html">BOOK APPOINTMENT</a></li>
+              </ul>
+              <div class="icon menu-btn">
+               <i class="fas fa-bars"></i>
+           </div>
+      </div>
+  </nav>
+
+    <!-- BANNER SECTION -->
+    <div class="banner">
+        <h1>HEAVENLY BEAUTY SPA</h1>
+    </div>
+
+    <!-- CONTENT SECTION -->
+    <div class="about1">
+        <div class="content">
+          <div class="title">FIND THE BEAUTY WITHIN YOU</div>
+          <p>Heavenly Beauty Spa is located in the heart of The Victoria & Alfred, Waterfront, Cape Town. With its 
+            beautiful surroundings and uniquely crafted environment, the spa evokes the ultimate sense of serenity. 
+            Heavenly Beauty Spa is an experience, and there is no other like it; consider it your indulgent home away from home.</p>
+          <div style="text-align: center;">
+            <a href="about.html" target="_blank">
+              <button> Read More > </button>
+            </a>
+          </div>
+        </div>
+      </div>
+     
+    <!-- FOOTER SECTION -->
+     <footer>
+        <table id="footerSections">
+            <tr>
+                <td>Heavenly Beauty Spa &copy; 2023</td>
+            </tr>
+        </table>
+    </footer>
+     
+   <!-- 4 JAVASCRIPT FUNCTIONS -->
+     <script>
+    //1. TO ACTIVATE (ON SMALL SCREENS) AND DEACTIVE (ON LARGE SCREENS) THE MENU AND CANCEL BUTTON
+        document.addEventListener("DOMContentLoaded", () => {
+        const body = document.querySelector("body");
+        const navbar = document.querySelector(".navbar");
+        const menu = document.querySelector(".menu-list");
+        const menuBtn = document.querySelector(".menu-btn");
+        const cancelBtn = document.querySelector(".cancel-btn");
+        menuBtn.onclick = ()=>{
+            menu.classList.add("active");
+            menuBtn.classList.add("hide");
+            body.classList.add("disabledScroll");
+        }
+
+        cancelBtn.onclick = ()=>{
+            menu.classList.remove("active");
+            menuBtn.classList.remove("hide");
+            body.classList.remove("disabledScroll");
+        }
+
+    // STICKY NAVBAR TO BE ENABLED AND DISABLED WHEN SCROLLING
+        window.onscroll = () => {
+    if (window.scrollY > 10) {
+        navbar.classList.add("sticky");
+    } else {
+        navbar.classList.remove("sticky");
+    }
+    }
+    // TO DISABLE SCROLLING
+       document.body.classList.add('disabledScroll');
+
+    // TO RE-ENABLE SCROLLING
+       document.body.classList.remove('disabledScroll');
+    });
+     </script>
+</body>
+</html>

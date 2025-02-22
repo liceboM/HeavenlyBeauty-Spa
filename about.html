@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heavenly Beauty Spa</title>
+    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+   <!-- NAVIGATION BAR SECTION -->
+   <nav class="navbar">
+    <div class="content">
+        <div class="logo"><a href="#">Heavenly Beauty Spa</a></div>
+            <ul class="menu-list">
+             <div class="icon cancel-btn">
+                 <i class="fas fa-times"></i>
+             </div>
+             <li><a href="index.html">HOME</a></li>
+             <li><a href="about.html">ABOUT US</a></li>
+             <li class="dropdown">
+               <a href="treatments.html">TREATMENTS &#9662;</a>
+               <ul class="dropdown-content">
+                 <li><a href="#">Laser Hair Removal</a></li>
+                 <li><a href="#">Massage Therapy</a></li>
+                 <li><a href="#">Waxing</a></li>
+                 <li><a href="#">Nail Bar</a></li>
+                 <li><a href="#">Spray Tan</a></li>
+                 <li><a href="#">Facial</a></li>
+               </ul>
+             </li>
+             <li><a href="contact.html">CONTACT US</a></li>
+             <li><a href="appointment.html">BOOK APPOINTMENT</a></li>
+           </ul>
+           <div class="icon menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+   </div>
+</nav>
+
+   <!-- BANNER SECTION -->
+   <div class="about-banner">
+        <h1>FIND OUT MORE ABOUT US...</h1>
+    </div>
+
+    <!-- ABOUT US SECTION -->
+   <div class="about-us">
+    <div class="content">
+        <div class="title">ABOUT US!!</div>
+      <h1>Learn more
+        <span>
+            about us...
+        </span></h1>
+      <p>
+        Heavenly Beauty Spa is part of the wellness revolution and is committed to assisting our clients in their quest to look and feel better. 
+        In line with our mission to deliver “an extraordinary experience in spa wellness”, we are constantly on the look-out for ways we can improve 
+        the lives of our guests by introducing new treatments, continuous education and partnering with cutting edge wellness businesses. Situated in 
+        Africa’s most sought after tourist destination, H.B.S is ideally positioned to deliver an extraordinary experience in spa wellness for local 
+        and international guests. Enjoy pure luxury, Take a journey through remarkable water features and enjoy the glow of natural light as you soak up 
+        the serene atmosphere of this urban oasis.
+      </p>
+      <p>All elements mix together in perfect harmony to delight your senses.
+        With internationally qualified therapists, using the best of both global and local brands, customers can rest assured they are in the best hands. 
+        Treatments are designed to deliver results, from 30 min express options to full spa days. Heavenly Beauty Spa extends over 900sm of space and includes 
+        nine treatment rooms, two couples suites, a 10-station Nail Bar and an opulent Relaxation Lounge. Facilities consist of a Heated Tranquility Pool, Middle 
+        Eastern Mud Ritual Rasul Chamber and Floatation Pool.</p>
+     </div>
+     </div>
+
+<!-- PHOTO GRID SECTION-->
+<div class="grid-1">
+    <div class="mySlides slide-1">
+      <img src="images/two.avif" alt="Image 2" >
+    </div>
+    <div class="mySlides slide-2">
+      <img src="images/one.avif" alt="Image 1" >
+    </div>
+  </div>
+
+     <!-- CONTENT SECTION -->
+    <div class="reservation">
+        <div class="content">
+          <div class="title">BOOK WITH US</div>
+          <p>Forget the daily grind for a moment and treat yourself, or a significant other, to some much-needed time at one of Cape Towns best Spas. After all, 
+            everyone deserves a bit relaxation time occasionally.
+          </p>
+          <div style="text-align: center;">
+            <a href="appointment.html" target="_blank">
+              <button> Book Reservation > </button>
+            </a>
+          </div>
+        </div>
+      </div>
+
+     <!-- FOOTER SECTION -->
+     <footer>
+      <table id="footerSections">
+          <tr>
+              <td>Heavenly Beauty Spa &copy; 2023</td>
+          </tr>
+      </table>
+  </footer>
+   
+ <!-- 4 JAVASCRIPT FUNCTIONS -->
+     <script>
+         //1. TO ACTIVATE (ON SMALL SCREENS) AND DEACTIVE (ON LARGE SCREENS) THE MENU AND CANCEL BUTTON
+         document.addEventListener("DOMContentLoaded", () => {
+             const body = document.querySelector("body");
+        const navbar = document.querySelector(".navbar");
+        const menu = document.querySelector(".menu-list");
+        const menuBtn = document.querySelector(".menu-btn");
+        const cancelBtn = document.querySelector(".cancel-btn");
+         menuBtn.onclick = ()=>{
+             menu.classList.add("active");
+         menuBtn.classList.add("hide");
+         body.classList.add("disabledScroll");
+         }
+
+         cancelBtn.onclick = ()=>{
+             menu.classList.remove("active");
+         menuBtn.classList.remove("hide");
+         body.classList.remove("disabledScroll");
+         }
+
+         // STICKY NAVBAR TO BE ENABLED AND DISABLED WHEN SCROLLING
+         window.onscroll = () => {
+             if (window.scrollY > 10) {
+        navbar.classList.add("sticky");
+         } else {
+             navbar.classList.remove("sticky");
+         }
+         }
+         // TO DISABLE SCROLLING
+         document.body.classList.add('disabledScroll');
+
+         // TO RE-ENABLE SCROLLING
+         document.body.classList.remove('disabledScroll');
+         });
+     </script>
+</body>
+</html>

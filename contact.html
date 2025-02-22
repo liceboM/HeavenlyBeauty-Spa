@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heavenly Beauty Spa</title>
+    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+   <!-- NAVIGATION BAR SECTION -->
+   <nav class="navbar">
+    <div class="content">
+        <div class="logo"><a href="#">Heavenly Beauty Spa</a></div>
+            <ul class="menu-list">
+             <div class="icon cancel-btn">
+                 <i class="fas fa-times"></i>
+             </div>
+             <li><a href="index.html">HOME</a></li>
+             <li><a href="about.html">ABOUT US</a></li>
+             <li class="dropdown">
+               <a href="treatments.html">TREATMENTS &#9662;</a>
+               <ul class="dropdown-content">
+                 <li><a href="#">Laser Hair Removal</a></li>
+                 <li><a href="#">Massage Therapy</a></li>
+                 <li><a href="#">Waxing</a></li>
+                 <li><a href="#">Nail Bar</a></li>
+                 <li><a href="#">Spray Tan</a></li>
+                 <li><a href="#">Facial</a></li>
+               </ul>
+             </li>
+             <li><a href="contact.html">CONTACT US</a></li>
+             <li><a href="appointment.html">BOOK APPOINTMENT</a></li>
+           </ul>
+           <div class="icon menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+   </div>
+</nav>
+
+   <!-- BANNER SECTION -->
+   <div class="contact-banner">
+        <h1>GET IN TOUCH WITH US...</h1>
+    </div>
+
+    <!-- CONTACT US SECTION -->
+    <div id="Container" class="clearfix">
+
+    <div class="contactWrapper">
+      <div class="contactLeft">
+        <form name="ContactForm" method="get">
+        <fieldset>
+            <h1>SEND US A MESSAGE</h1>
+            <table border="1">
+                <tr>
+                    <td><label for="FName">Full Name:</label></td>
+                    <td><input type="text" id="FName" name="FullName" placeholder="Full Name.."></td>
+                </tr>
+
+                <tr>
+                    <td><label for="Email">Email Address:</label></td>
+                    <td><input type="text" id="Email" name="EmailAddress" placeholder="Email Address..."></td>
+                </tr>
+
+                <tr>
+                    <td><label for="PNumber">Phone Number:</label></td>
+                    <td><input type="text" id="PNumber" name="PhoneNumber" placeholder="Phone Number..."></td>
+                </tr>
+
+                <tr>
+                    <td><label for="Gender">Gender</label></td>
+                    <td>
+                        <input name="radGender" type="radio" />Male &nbsp;&nbsp;
+                        <input name="radGender" type="radio" />Female &nbsp;&nbsp;
+                        <input name="radGender" type="radio" />Non-Binary &nbsp;&nbsp;
+                        <input name="radGender" type="radio" />Other &nbsp;&nbsp;
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label for="MailList">MailList</label></td>
+                    <td>
+                        <input id="chkEmail" type="checkbox" /> Email &nbsp;&nbsp;
+                        <input id="chkText" type="checkbox" /> Text &nbsp;&nbsp;
+                    </td>
+                </tr>
+             <tr>
+                <td colspan="2" id="formMessageCell">
+                    <hr />
+                    <label for="Msg">Message:</label>
+                    <textarea rows="5" cols="52"> </textarea>
+                </td>
+            </tr>
+            
+            <tr>
+                <td colspan="2">
+                    <input id="Submit1" type="submit" class="formButton" />
+                    <input id="Reset1" type="reset" class="formButton" />
+                </td>
+            </tr>
+            </table>
+        </fieldset>
+    </form>
+</div>
+
+    <div class="contactCenter">
+      <fieldset>
+          <h2>CONTACT US</h2>
+          <h3>General Enquiries:</h3>
+          <em>+27 79 972 2251</em><br />
+          <h3>Room Reservations:</h3>
+          <em>+27 21 776 1234</em><br />
+
+          <h2>EMAIL US</h2>
+          <em>HeavenlyBeautySpa@gmail.com</em><br />
+
+          <h2>VISIT US</h2>
+          <em>Dock Rd, Victoria & Alfred Waterfront,</em><br />
+          <em>Cape Town, 8001,</em><br />
+          <em>South Africa</em><br />
+
+          <h2>HOURS:</h2>
+          <em>8am – 7pm Monday to Saturday</em><br />
+          <em>9am – 5pm Sunday and</em><br />
+          <em>Public Holidays</em><br />
+      </fieldset>
+      </div>
+
+      <div class="contactRight">
+        <img src="images/WaterfrontMapWidget.jpg" alt="Find Us here on the map" id="map" />
+    </div>
+</div>
+</div>
+   
+ <!-- FOOTER SECTION -->
+     <footer>
+        <table id="footerSections">
+            <tr>
+                <td>Heavenly Beauty Spa &copy; 2023</td>
+            </tr>
+        </table>
+    </footer>
+     
+    <!-- 4 JAVASCRIPT FUNCTIONS -->
+     <script>
+         //1. TO ACTIVATE (ON SMALL SCREENS) AND DEACTIVE (ON LARGE SCREENS) THE MENU AND CANCEL BUTTON
+         document.addEventListener("DOMContentLoaded", () => {
+             const body = document.querySelector("body");
+        const navbar = document.querySelector(".navbar");
+        const menu = document.querySelector(".menu-list");
+        const menuBtn = document.querySelector(".menu-btn");
+        const cancelBtn = document.querySelector(".cancel-btn");
+         menuBtn.onclick = ()=>{
+             menu.classList.add("active");
+         menuBtn.classList.add("hide");
+         body.classList.add("disabledScroll");
+         }
+
+         cancelBtn.onclick = ()=>{
+             menu.classList.remove("active");
+         menuBtn.classList.remove("hide");
+         body.classList.remove("disabledScroll");
+         }
+
+         // STICKY NAVBAR TO BE ENABLED AND DISABLED WHEN SCROLLING
+         window.onscroll = () => {
+             if (window.scrollY > 10) {
+        navbar.classList.add("sticky");
+         } else {
+             navbar.classList.remove("sticky");
+         }
+         }
+         // TO DISABLE SCROLLING
+         document.body.classList.add('disabledScroll');
+
+         // TO RE-ENABLE SCROLLING
+         document.body.classList.remove('disabledScroll');
+         });
+     </script>
+  </body>
+  </html>
+  
